@@ -1,0 +1,3 @@
+= Viz Post
+
+Hey, My first blog on Github.
