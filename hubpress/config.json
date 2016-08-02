@@ -4,7 +4,17 @@
     "repositoryName": "vs4vijay.github.io",
     "branch": "master"
   },
+  "site": {},
+  "socialnetwork": {
+    "twitter": "vs4vijay",
+    "googleplus": "VizaySoni",
+    "linkedin": "vs4vijay",
+    "facebook": "vs4vijay",
+    "instagram": "vs4vijay",
+    "pinterest": "",
+    "github": "vs4vijay"
+  },
   "theme": {
-    "name": "Casper"
+    "name": "casper"
   }
 }
