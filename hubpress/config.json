@@ -4,7 +4,9 @@
     "repositoryName": "vs4vijay.github.io",
     "branch": "master"
   },
-  "site": {},
+  "site": {
+    "title": "Vijay Soni's Blog"
+  },
   "socialnetwork": {
     "twitter": "vs4vijay",
     "googleplus": "VizaySoni",
@@ -15,6 +17,6 @@
     "github": "vs4vijay"
   },
   "theme": {
-    "name": "ghostium"
+    "name": "saga"
   }
 }
