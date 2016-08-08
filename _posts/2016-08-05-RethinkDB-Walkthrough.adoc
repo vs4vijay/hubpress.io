@@ -1,0 +1,39 @@
+= RethinkDB Walkthrough
+
+## Run rethinkdb server
+`rethinkdb`
+
+## RethinkDB Admin console at http://127.0.0.1:8080
+
+Install driver to interact with rethinkdb
+`sudo gem install rethinkdb`
+
+## Play with rethinkdb client
+
+### require rethinkdb driver first, then use `r` object to interect with db
+```
+require 'rethinkdb'
+include RethinkDB::Shortcuts
+```
+
+## Connect with DB
+`r.connect(:host => 'localhost', :port => 28015).repl`
+
+## Create a table in database **test**
+`r.db('test').table_create('planets').run`
+
+## Put some data into table using **insert**
+`r.table('planets').insert({ 'name'=>'Earth' }).run`
+
+## Retrieve data from table
+`r.table('planets').run`
+
+## Retrieve by Id
+`r.db('test').table('planets').get('66bdaf92-79f2-42e4-a55a-e3cc63b89baf').run`
+
+## Query using Filters
+```
+cursor = r.table("authors").filter{|author| author["name"].eq("William Adama") }.run
+cursor.each{ |document| p document }
+```
+
