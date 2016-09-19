@@ -1,3 +1,84 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Vijay Soni's Blog]]></title><description><![CDATA[Vijay Soni's Blog]]></description><link>https://vs4vijay.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 05 Aug 2016 10:21:34 GMT</lastBuildDate><atom:link href="https://vs4vijay.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Viz Post]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Vijay Soni's Blog]]></title><description><![CDATA[Vijay Soni's Blog]]></description><link>https://vs4vijay.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 19 Sep 2016 18:46:41 GMT</lastBuildDate><atom:link href="https://vs4vijay.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[RethinkDB Walkthrough]]></title><description><![CDATA[<div class="sect1">
+<h2 id="_run_rethinkdb_server">Run rethinkdb server</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>rethinkdb</code></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_rethinkdb_admin_console_at_a_href_http_127_0_0_1_8080_class_bare_http_127_0_0_1_8080_a">RethinkDB Admin console at <a href="http://127.0.0.1:8080" class="bare">http://127.0.0.1:8080</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Install driver to interact with rethinkdb
+<code>sudo gem install rethinkdb</code></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_play_with_rethinkdb_client">Play with rethinkdb client</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_require_rethinkdb_driver_first_then_use_code_r_code_object_to_interect_with_db">require rethinkdb driver first, then use <code>r</code> object to interect with db</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>require 'rethinkdb'
+include RethinkDB::Shortcuts</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_connect_with_db">Connect with DB</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>r.connect(:host &#8658; 'localhost', :port &#8658; 28015).repl</code></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_create_a_table_in_database_strong_test_strong">Create a table in database <strong>test</strong></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>r.db('test').table_create('planets').run</code></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_put_some_data_into_table_using_strong_insert_strong">Put some data into table using <strong>insert</strong></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>r.table('planets').insert({ 'name'&#8658;'Earth' }).run</code></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_retrieve_data_from_table">Retrieve data from table</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>r.table('planets').run</code></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_retrieve_by_id">Retrieve by Id</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>r.db('test').table('planets').get('66bdaf92-79f2-42e4-a55a-e3cc63b89baf').run</code></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_query_using_filters">Query using Filters</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>cursor = r.table("planets").filter{|planet| planet["name"].eq("Mars") }.run
+cursor.each{ |document| p document }</code></pre>
+</div>
+</div>
+</div>
+</div>]]></description><link>https://vs4vijay.github.io/2016/08/05/RethinkDB-Walkthrough.html</link><guid isPermaLink="true">https://vs4vijay.github.io/2016/08/05/RethinkDB-Walkthrough.html</guid><dc:creator><![CDATA[Vizay Soni]]></dc:creator><pubDate>Fri, 05 Aug 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Viz Post]]></title><description><![CDATA[<div class="paragraph">
 <p>Hey, My first blog on Github. Testing</p>
 </div>]]></description><link>https://vs4vijay.github.io/2016/08/02/Viz-Post.html</link><guid isPermaLink="true">https://vs4vijay.github.io/2016/08/02/Viz-Post.html</guid><dc:creator><![CDATA[Vizay Soni]]></dc:creator><pubDate>Tue, 02 Aug 2016 00:00:00 GMT</pubDate></item></channel></rss>
