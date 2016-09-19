@@ -33,7 +33,7 @@ include RethinkDB::Shortcuts
 
 ## Query using Filters
 ```
-cursor = r.table("authors").filter{|author| author["name"].eq("William Adama") }.run
+cursor = r.table("planets").filter{|planet| planet["name"].eq("Mars") }.run
 cursor.each{ |document| p document }
 ```
 
